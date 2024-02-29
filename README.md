@@ -16,19 +16,8 @@ This project was inspired by the need for a simple and effective to-do list appl
 - **Flask**: Python web framework used for backend development.
 - **Flask-WTF**: Flask extension for handling forms.
 - **Flask-SQLAlchemy**: Flask extension for database management.
-- **Flask-Mail**: Flask extension for email sending functionality.
 - **HTML/CSS**: Frontend design and layout.
 - **JavaScript**: Used for client-side interactivity.
-
-## Getting Started
-
-To run ToDoTaDa locally, follow these steps:
-
-1. Clone this repository.
-2. Install the required dependencies using `pip install -r requirements.txt`.
-3. Set up the database by running `python manage.py db upgrade`.
-4. Set the necessary environment variables for Flask-Mail (if using email functionality).
-5. Run the application using `python manage.py run`.
 
 ## Contributing
 
