@@ -1,0 +1,211 @@
+/* Todos */
+
+.todo-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.todo-item {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+@media screen and (min-width: 576px) {
+    .todo-item {
+        display: flex;
+        align-items: center;
+    }
+}
+
+.todo-details {
+    display: flex; /* Use flexbox layout */
+    flex-direction: column; /* Stack children vertically */
+}
+
+.todo-actions {
+    margin-left: auto; /* Push actions to the right */
+}
+
+.todo-actions form {
+    display: inline-block; /* or display: block; */
+    margin-right: 10px; /* Adjust margin as needed */
+}
+
+.todo-item span {
+    margin-bottom: 5px; /* Add spacing between spans */
+}
+
+.todo-item span.title {
+    font-size: 18px; /* Adjust the font size as needed */
+    font-weight: bold; /* Make the title bold */
+    display: inline-block; /* Ensure the span behaves like a block element */
+    max-width: 1000px; /* Default maximum width */
+    overflow: hidden; /* Hide any content that overflows the max-width */
+    white-space: nowrap; /* Prevent the text from wrapping */
+    text-overflow: ellipsis; /* Show an ellipsis (...) for overflowed text */
+}
+
+@media screen and (max-width: 576px) {
+    .todo-item span.title {
+        max-width: 90%; /* Adjust the maximum width for smaller screens */
+    }
+}
+
+.todo-item span.status {
+    margin-top: 5px; /* Adjust the margin to push the status down */
+}
+
+.todo-item a {
+    margin-left: 10px; /* Add margin between action links */
+}
+
+
+
+/* Forms */
+
+fieldset {
+    border: 2px solid #ccc;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    margin-bottom: 20px;
+    max-width: 400px; /* Adjust the max-width as needed */
+}
+
+/* Media query for screens smaller than 576px (typical phone size) */
+@media screen and (max-width: 576px) {
+    fieldset {
+        padding: 5px; /* Further decrease padding for smaller screens */
+        max-width: 100%;
+    }
+}
+
+.form-field {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    display: flex; /* Change display to flex */
+    flex-direction: column; /* Arrange items in a column */
+    align-items: left;
+}
+
+.form-field label {
+    width: 150px; /* Adjust the width as needed */
+    text-align: left;
+    padding-right: 10px;
+}
+
+.form-field input{
+    width: 275px; /* Adjust the width as needed */
+}
+
+.form-button {
+    margin-top: 10px;
+    margin-left: 15px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.form-button:hover {
+    background-color: #333;
+}
+
+.invalid-feedback {
+    margin-left: 10px;
+    color: red;
+}
+
+
+
+/* Sidebar */
+
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 60px;
+  transition: 0.5s;
+}
+
+.sidebar a {
+  padding: 10px 20px; /* Adjusted padding for better spacing */
+  text-decoration: none;
+  font-size: 18px; /* Reduced font size */
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+
+/* Position and style the close button (top right corner) */
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+/* The button used to open the sidebar */
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #111;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+}
+
+.openbtn:hover {
+  background-color: #444;
+}
+
+/* Style page content */
+#main {
+  transition: margin-left .5s;
+  padding: 20px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidebar {padding-top: 15px;}
+  .sidebar a {font-size: 16px;} /* Adjusted font size for smaller screens */
+}
+
+/* Divider styles */
+.sidebar-divider {
+  border-top: 2px solid #555; /* Adjust the thickness as needed */
+  margin-top: 20px; /* Add some space above the divider */
+  margin-bottom: 20px; /* Add some space below the divider */
+}
+
+/* Additional styles for sidebar authentication */
+.sidebar-authentication {
+  margin-top: 20px; /* Add margin between authentication links and other links */
+}
+
+.sidebar-authentication .sidebar-link {
+  display: block;
+  padding: 10px 20px; /* Adjusted padding for consistency */
+  text-decoration: none;
+  color: #818181; /* Set default color to grey */
+  transition: color 0.3s; /* Apply transition effect to color */
+}
+
+.sidebar-authentication .sidebar-link:hover {
+  color: red; /* Change color to red on hover */
+}

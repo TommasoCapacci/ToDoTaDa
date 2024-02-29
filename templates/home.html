@@ -1,0 +1,94 @@
+
+<!-- saved from url=(0091)https://www.pythonanywhere.com/user/ToDoTaDa/files/home/ToDoTaDa/mysite/templates/home.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></head><body data-new-gr-c-s-check-loaded="14.1157.0" data-gr-ext-installed="" cz-shortcut-listen="true">{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="w3-container w3-margin-bottom">
+    <a style="float: right;" href="https://www.pythonanywhere.com/add">
+        <button>Create a Todo</button>
+    </a>
+
+    <form action="https://www.pythonanywhere.com/home">
+      <div class="w3-margin-bottom">
+        <label for="filter">Filter by: </label>
+        {% if filter %}
+            <input class="w3-border" type="text" name="filter" value="{{filter}}">
+        {% else %}
+            <input class="w3-border" type="text" name="filter">
+        {% endif %}
+        <button type="submit" class="form-button" style="margin-right: 10px">Search</button>
+        {% if show_completed %}
+            <input type="checkbox" id="show_completed" name="show_completed" value="true" onchange="this.form.submit()" {%="" if="" show_completed="=" "true"="" %}checked{%="" endif="" %}="">
+        {% else %}
+            <input type="checkbox" id="show_completed" name="show_completed" value="true" onchange="this.form.submit()">
+        {% endif %}
+        <label for="show_completed">Show Completed</label>
+      </div>
+    </form>
+
+    {% if todo_list %}
+      <ul class="todo-list">
+        {% for todo in todo_list %}
+            <li class="todo-item">
+                <div class="todo-details">
+                <span class="title">{{ todo.title | safe }}</span>
+                <span class="status">
+                    {% if todo.completed %}
+                        Completed
+                    {% else %}
+                        Not Completed
+                    {% endif %}
+                </span>
+                </div>
+                <div class="todo-actions">
+                    {% if not todo.completed %}
+                    <form action="https://www.pythonanywhere.com/done/%7B%7Btodo.id%7D%7D" method="POST" style="display: inline;" onsubmit="return confirm(&#39;Are you sure you want to mark this Todo as done?&#39;);">
+                        <input type="hidden" name="filter" value="{{" filter="" }}="">
+                        <input type="hidden" name="show_completed" value="{{" show_completed="" }}="">
+                        <button type="submit">Done</button>
+                    </form>
+                    <form action="https://www.pythonanywhere.com/edit/%7B%7Btodo.id%7D%7D" method="GET" style="display: inline;">
+                        <button type="submit">Edit</button>
+                    </form>
+                    {% endif %}
+                    <form action="https://www.pythonanywhere.com/delete/%7B%7Btodo.id%7D%7D" method="POST" style="display: inline;">
+                        <input type="hidden" name="filter" value="{{" filter="" }}="">
+                        <input type="hidden" name="show_completed" value="{{" show_completed="" }}="">
+                        <button type="submit">Delete</button>
+                    </form>
+                </div>
+            </li>
+        {% endfor %}
+      </ul>
+    {% else %}
+        {% if filter %}
+            <p>No Todo matching this filter...</p>
+        {% else %}
+            <p>No remaining Todo! Yay</p>
+        {% endif %}
+    {% endif %}
+
+</div>
+
+{% endblock content %}</body><grammarly-desktop-integration data-grammarly-shadow-root="true"><template shadowrootmode="open"><style>
+      div.grammarly-desktop-integration {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select:none;
+        user-select:none;
+      }
+
+      div.grammarly-desktop-integration:before {
+        content: attr(data-content);
+      }
+    </style><div aria-label="grammarly-integration" role="group" tabindex="-1" class="grammarly-desktop-integration" data-content="{&quot;mode&quot;:&quot;full&quot;,&quot;isActive&quot;:true,&quot;isUserDisabled&quot;:false}"></div></template></grammarly-desktop-integration></html>

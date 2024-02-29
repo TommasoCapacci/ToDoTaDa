@@ -1,0 +1,88 @@
+
+<!-- saved from url=(0095)https://www.pythonanywhere.com/user/ToDoTaDa/files/home/ToDoTaDa/mysite/templates/register.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></head><body data-new-gr-c-s-check-loaded="14.1157.0" data-gr-ext-installed="" cz-shortcut-listen="true">{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="w3-container w3-margin-bottom">
+    <form method="POST" action="https://www.pythonanywhere.com/user/ToDoTaDa/files/home/ToDoTaDa/mysite/templates/register.html">
+        {{ form.hidden_tag() }}
+        <fieldset>
+            <legend>Join Today</legend>
+            <div class="form-field">
+                <label for="username">{{ form.username.label }}</label>
+                {{ form.username() }}
+                {% if form.username.errors %}
+                    <div class="invalid-feedback">
+                        {% for error in form.username.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+            <div class="form-field">
+                <label for="email">{{ form.email.label }}</label>
+                {{ form.email() }}
+                {% if form.email.errors %}
+                    <div class="invalid-feedback">
+                        {% for error in form.email.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+            <div class="form-field">
+                <label for="password">{{ form.password.label }}</label>
+                {{ form.password() }}
+                {% if form.password.errors %}
+                    <div class="invalid-feedback">
+                        {% for error in form.password.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+            <div class="form-field">
+                <label for="confirm_password">{{ form.confirm_password.label }}</label>
+                {{ form.confirm_password() }}
+                {% if form.confirm_password.errors %}
+                    <div class="invalid-feedback">
+                        {% for error in form.confirm_password.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+        </fieldset>
+        <div>
+            {{ form.submit(class="form-button") }}
+        </div>
+        <div>
+            <small style="margin-left: 10px;">
+                Already have an account? <a href="https://www.pythonanywhere.com/login">Sign In</a>
+            </small>
+        </div>
+    </form>
+</div>
+
+{% endblock content %}</body><grammarly-desktop-integration data-grammarly-shadow-root="true"><template shadowrootmode="open"><style>
+      div.grammarly-desktop-integration {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select:none;
+        user-select:none;
+      }
+
+      div.grammarly-desktop-integration:before {
+        content: attr(data-content);
+      }
+    </style><div aria-label="grammarly-integration" role="group" tabindex="-1" class="grammarly-desktop-integration" data-content="{&quot;mode&quot;:&quot;full&quot;,&quot;isActive&quot;:true,&quot;isUserDisabled&quot;:false}"></div></template></grammarly-desktop-integration></html>

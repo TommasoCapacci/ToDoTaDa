@@ -1,0 +1,58 @@
+
+<!-- saved from url=(0091)https://www.pythonanywhere.com/user/ToDoTaDa/files/home/ToDoTaDa/mysite/templates/edit.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></head><body cz-shortcut-listen="true" data-new-gr-c-s-check-loaded="14.1157.0" data-gr-ext-installed="">{% extends "layout.html" %}
+
+{% block content %}
+
+<div>
+    <form action="https://www.pythonanywhere.com/edit/%7B%7Btodo.id%7D%7D" method="POST">
+        <div style="margin-bottom: 5px;">
+            <label for="title" style="margin-left: 20px;">Title:</label>
+        </div>
+        <div>
+            <textarea name="title" id="title" style="width: 325px; margin-left: 15px;" rows="5" maxlength="100" required="">{{ todo.title }}</textarea>
+        </div>
+        <div>
+            <small id="charCount" style="color: gray; margin-left: 30px;">16/100 characters used</small> <!-- Display character count -->
+        </div>
+        <div style="margin-left: 10px;">
+            <button type="submit" class="form-button">Edit</button>
+        </div>
+    </form>
+</div>
+
+<script>
+    // JavaScript to count characters and update counter
+    const titleInput = document.getElementById('title');
+    const charCount = document.getElementById('charCount');
+
+    // Initialize character count based on initial value
+    charCount.textContent = titleInput.value.length + '/100 characters used';
+
+    titleInput.addEventListener('input', function() {
+        const count = this.value.length;
+        charCount.textContent = count + '/100 characters used';
+    });
+</script>
+
+{% endblock content %}</body><grammarly-desktop-integration data-grammarly-shadow-root="true"><template shadowrootmode="open"><style>
+      div.grammarly-desktop-integration {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select:none;
+        user-select:none;
+      }
+
+      div.grammarly-desktop-integration:before {
+        content: attr(data-content);
+      }
+    </style><div aria-label="grammarly-integration" role="group" tabindex="-1" class="grammarly-desktop-integration" data-content="{&quot;mode&quot;:&quot;full&quot;,&quot;isActive&quot;:true,&quot;isUserDisabled&quot;:false}"></div></template></grammarly-desktop-integration></html>

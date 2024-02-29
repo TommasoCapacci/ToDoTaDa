@@ -1,0 +1,93 @@
+
+<!-- saved from url=(0092)https://www.pythonanywhere.com/user/ToDoTaDa/files/home/ToDoTaDa/mysite/templates/login.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></head><body data-new-gr-c-s-check-loaded="14.1157.0" data-gr-ext-installed="" cz-shortcut-listen="true">{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="w3-container w3-margin-bottom">
+    <form method="POST" action="https://www.pythonanywhere.com/user/ToDoTaDa/files/home/ToDoTaDa/mysite/templates/login.html">
+        {{ form.hidden_tag() }}
+        <fieldset>
+            <legend>Please provide credentials</legend>
+            <div class="form-field">
+                <label for="email">{{ form.email.label }}</label>
+                {{ form.email() }}
+                {% if form.email.errors %}
+                    <div class="invalid-feedback">
+                        {% for error in form.email.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+            <div class="form-field">
+                <label for="password">{{ form.password.label }}</label>
+                {{ form.password() }}
+                {% if form.password.errors %}
+                    <div class="invalid-feedback">
+                        {% for error in form.password.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+            <div>
+                {{ form.show_password(style="margin-left: 25px;") }}
+
+                {{ form.show_password.label }}
+            </div>
+            <div>
+                {{ form.remember(style="margin-left: 25px;") }}
+
+                {{ form.remember.label }}
+            </div>
+        </fieldset>
+        <div>
+            {{ form.submit(class="form-button") }}
+        </div>
+        <div>
+            <small style="display: inline; margin-left: 10px;">
+                <a href="https://www.pythonanywhere.com/user/ToDoTaDa/files/home/ToDoTaDa/mysite/templates/login.html#">Forgot password?</a>
+            </small>
+            <small style="display: inline; margin-left: 10px;">
+                Need an account? <a href="https://www.pythonanywhere.com/register">Sign up now</a>
+            </small>
+        </div>
+    </form>
+</div>
+
+<script>
+    window.addEventListener("load", function(){
+        var checkbox  = document.getElementById('{{form.show_password.id}}');
+        var x = document.getElementById('{{form.password.id}}');
+        checkbox.addEventListener('change', function() {
+            if(this.checked) {
+                x.type = 'text';
+            } else {
+                x.type = 'password';
+            }
+        });
+    });
+</script>
+
+{% endblock content %}</body><grammarly-desktop-integration data-grammarly-shadow-root="true"><template shadowrootmode="open"><style>
+      div.grammarly-desktop-integration {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select:none;
+        user-select:none;
+      }
+
+      div.grammarly-desktop-integration:before {
+        content: attr(data-content);
+      }
+    </style><div aria-label="grammarly-integration" role="group" tabindex="-1" class="grammarly-desktop-integration" data-content="{&quot;mode&quot;:&quot;full&quot;,&quot;isActive&quot;:true,&quot;isUserDisabled&quot;:false}"></div></template></grammarly-desktop-integration></html>
